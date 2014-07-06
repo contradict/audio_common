@@ -15,6 +15,7 @@ catkin_package()
 
 add_executable(audio_capture src/audio_capture.cpp)
 target_link_libraries(audio_capture ${catkin_LIBRARIES} ${GST_LIBRARIES} ${Boost_LIBRARIES}) 
+add_dependencies(audio_capture audio_common_msgs_gencpp)
 
 install(TARGETS audio_capture
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
